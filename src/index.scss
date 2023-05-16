@@ -1,0 +1,24 @@
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--text-color: #d1d7db;
+	--background-color: #111b21;
+	--panel-background: #202c33;
+	--border-color: rgba(255, 255, 255, .1);
+	--secondary-text-color: #8696a0;
+	--search-input-background-color: #202c33;
+	--active-background-color: #00a884;
+}
+
+body {
+	margin: 0 auto;
+	font-family: 'Segoe UI', Helvetica, sans-serif;
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+
+p {
+	margin: 0;
+}
