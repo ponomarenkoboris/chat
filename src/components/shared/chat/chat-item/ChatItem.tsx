@@ -1,4 +1,4 @@
-import unknownChat from '../../../../assets/unknown-chat.svg'
+import defaultUser from '../../../../assets/default-user.jpg'
 import droparrow from '../../../../assets/down-arrow.svg'
 import './ChatItem.scss';
 
@@ -6,7 +6,7 @@ export const ChatItem = () => {
 	return (
 		<div className='chat-item'>
 			<div className="chat-item__photo-wrapper">
-				<img src={unknownChat} alt="" className='item__photo' />
+				<img src={defaultUser} alt="Chat name" className='item__photo' />
 			</div>
 			<div className="chat-item__info">
 				<div className="info__item">

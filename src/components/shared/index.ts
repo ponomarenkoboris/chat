@@ -1,9 +1,9 @@
-import { Message } from "./message/Message";
+import { Messages } from "./message/Messages";
 import { Chat } from "./chat/Chat";
 import { UserInput } from "./user-input/UserInput";
 
 export {
-	Message,
+	Messages,
 	Chat,
 	UserInput
 }

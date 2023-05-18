@@ -2,4 +2,45 @@
 	width: 100%;
 	height: 59px;
 	background-color: var(--panel-background);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 16px;
+
+	&__user {
+		height: 40px;
+		width: 40px;
+		padding: 0;
+		border: none;
+		outline: none;
+		border-radius: 50%;
+		background-color: inherit;
+		cursor: pointer;
+
+	
+		img {
+			width: inherit;
+			border-radius: 50%;
+			height: inherit;
+		}
+	}
+
+	&__options {
+		.option__item {
+			padding: 8px;
+			border: none;
+			outline: none;
+			background-color: inherit;
+			cursor: pointer;
+			height: 24px;
+			width: 24px;
+			background-repeat: no-repeat;
+			background-position: center;
+
+			img {
+				height: inherit;
+				width: inherit;
+			}
+		}
+	}
 }

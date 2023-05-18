@@ -10,6 +10,7 @@
 	--secondary-text-color: #8696a0;
 	--search-input-background-color: #202c33;
 	--active-background-color: #00a884;
+	--outgoing-message-background: #005c4b;
 }
 
 body {
@@ -17,6 +18,19 @@ body {
 	font-family: 'Segoe UI', Helvetica, sans-serif;
 	color: var(--text-color);
 	background-color: var(--background-color);
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+	width: 6px;
+	background-color: var(--border-color);
 }
 
 p {
