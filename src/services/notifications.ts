@@ -64,7 +64,6 @@ export default function receiveNotifications (
 			}
 
 			if (response.body.messageData.typeMessage === 'textMessage') {
-				console.log('responmse')
 				callback(response);
 			}
 
