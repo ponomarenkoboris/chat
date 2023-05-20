@@ -8,20 +8,30 @@
 	padding: 10px 16px;
 
 	&__user {
-		height: 40px;
-		width: 40px;
-		padding: 0;
-		border: none;
-		outline: none;
-		border-radius: 50%;
-		background-color: inherit;
-		cursor: pointer;
+		display: flex;
+		align-items: center;
 
-	
-		img {
-			width: inherit;
+		.user__avatar {
+			margin-right: 10px;
+			height: 40px;
+			width: 40px;
+			padding: 0;
+			border: none;
+			outline: none;
 			border-radius: 50%;
-			height: inherit;
+			background-color: inherit;
+			cursor: pointer;
+	
+		
+			img {
+				width: inherit;
+				border-radius: 50%;
+				height: inherit;
+			}
+		}
+
+		.user__username {
+			font-weight: 500;
 		}
 	}
 
@@ -33,14 +43,9 @@
 			background-color: inherit;
 			cursor: pointer;
 			height: 24px;
-			width: 24px;
 			background-repeat: no-repeat;
 			background-position: center;
-
-			img {
-				height: inherit;
-				width: inherit;
-			}
+			color: var(--secondary-text-color);
 		}
 	}
 }

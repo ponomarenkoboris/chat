@@ -1,29 +1,23 @@
-import menuIcon from '../../../assets/menu.svg'
-import defaultUser from '../../../assets/default-user.jpg'
+import { ReactNode } from 'react';
+import defaultUser from '@assets/shared/default-user.jpg';
 import './Header.scss';
 
-type HeaderOption = {
-	src: string,
-	onClick?: () => void
-}
-
 interface HeaderProps {
-	options?: HeaderOption[]
+	username: string,
+	avatar?: string,
+	children?: ReactNode
 }
 
-// TODO append options insertion
-export const Header = ({ options }: HeaderProps) => {
+export const Header = ({ username, avatar, children }: HeaderProps) => {
 	return (
 		<header className='header'>
-			<button className="header__user">
-				<img src={defaultUser} alt="username" />
-			</button>
-			<div className="header__options">
-				{/* {options.map(({ src, onClick }) => <button className='option__item'></button>)} */}
-				<button className='option__item options__menu'>
-					<img src={menuIcon} alt="" />
+			<div className="header__user">
+				<button className="user__avatar">
+					<img src={avatar || defaultUser} alt={username} />
 				</button>
+				<p className='user__username'>{username}</p>
 			</div>
+			{children}
 		</header>
 	)
 }

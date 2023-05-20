@@ -1,6 +1,42 @@
 .user-input {
 	height: 52px;
 	padding: 5px 16px;
-	background-color: red;
+	background-color: var(--panel-background);
 	padding: 5px 16px;
+	display: flex;
+	align-items: center;
+	width: 100%;
+
+	.input-btn {
+		height: 26px;
+		width: 26px;
+		padding: 0;
+		cursor: pointer;
+		margin: 8px;
+		outline: none;
+		border: none;
+		background-color: inherit;
+		border-radius: 50%;
+
+		img {
+			height: 26px;
+			width: 26px;
+		}
+	}
+
+	&__text {
+		flex: 1;
+		height: 100%;
+		resize: none;
+		margin: 5px 8px;
+		padding: 9px 12px;
+		outline: none;
+		border: none;
+		color: var(--text-color);
+		background-color: #2a3942;
+		border-radius: 8px;
+		font-size: 15px;
+		font-family: inherit;
+		overflow-y: auto;
+	}
 }

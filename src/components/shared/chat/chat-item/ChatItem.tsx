@@ -1,25 +1,27 @@
-import defaultUser from '../../../../assets/default-user.jpg'
-import droparrow from '../../../../assets/down-arrow.svg'
+import { memo } from 'react'
+import { Chat } from '@store/chat/types';
+import useChatActions from '@hooks/useChat';
+import defaultUser from '@assets/shared/default-user.jpg'
 import './ChatItem.scss';
 
-export const ChatItem = () => {
+type ChatItemProps = { isActive: boolean } & Chat
+export const ChatItem = memo((props: ChatItemProps) => {
+	const { selectActiveChat } = useChatActions()
+
+	const onClick = () => {
+		selectActiveChat(props)
+	}
+
 	return (
-		<div className='chat-item'>
+		<div className={props.isActive ? 'chat-item active' : 'chat-item'} onClick={onClick}>
 			<div className="chat-item__photo-wrapper">
-				<img src={defaultUser} alt="Chat name" className='item__photo' />
+				<img src={defaultUser} alt={props.id} className='item__photo' />
 			</div>
 			<div className="chat-item__info">
 				<div className="info__item">
-					<p className="info__name">Some Chat</p>
-					<p className="info__last-message">Hello world!</p>				
-				</div>
-				<div className="info__item">
-					<p className="info__last-message-time">01.01.2023</p>
-					<button className="info__option-button">
-						<img src={droparrow} alt="Options" />
-					</button>
+					<p className="info__name">{props.name || props.id.split('@')[0]}</p>
 				</div>
 			</div>
 		</div>
 	)
-}
+})

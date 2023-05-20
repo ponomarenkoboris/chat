@@ -4,5 +4,18 @@
 	.chat__container {
 		max-height: calc(100% - 59px - 49px);
 		overflow-y: auto;
+
+		.create__button {
+			display: block;
+			margin: 0 auto;
+			font-size: inherit;			
+			padding: 10px 20px;
+			border: .5px solid var(--border-color);
+			border-radius: 8px;
+			outline: none;
+			color: var(--color);
+			cursor: pointer;
+			background-color: var(--active-background-color);
+		}
 	}
 }

@@ -38,29 +38,10 @@
 			.info__name {
 				font-size: 17px;
 			}
-
-			.info__last-message {
-				font-size: 14px;
-				color: var(--secondary-text-color);
-			}
-
-			.info__last-message-time {
-				font-size: 12px;
-				color: var(--secondary-text-color);
-				margin-bottom: 3px;
-			}
-
-			.info__option-button {
-				cursor: pointer;
-				visibility: hidden;
-				background-color: inherit;
-				border: none;
-				outline: none;
-
-				img {
-					height: 15px;
-				}
-			}
 		}
 	}
+}
+
+.active {
+	background-color: var(--panel-background);
 }

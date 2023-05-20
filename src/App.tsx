@@ -1,14 +1,16 @@
-import { Sidebar, Main, Login } from './components/layout'
+import { Sidebar, Main } from '@layout/index'
+import { AuthProtection } from '@context/AuthProtection'
 import './App.scss'
 
 function App() {
-	const isLoggedIn = true
-	return isLoggedIn ? (
-		<div className='app'>
-			<Sidebar />
-			<Main />
-		</div>
-	) : <Login />
+	return (
+		<AuthProtection>
+			<div className='app'>
+				<Sidebar />
+				<Main />
+			</div>
+		</AuthProtection>
+	)
 }
 
 export default App

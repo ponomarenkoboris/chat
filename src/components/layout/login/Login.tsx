@@ -1,17 +1,19 @@
-import { FormEvent } from 'react';
+import { FormEvent, useContext } from 'react';
+import { AuthProtectionContext } from '@context/AuthProtection';
 import './Login.scss'
 
 type FormElements = { idInstance?: HTMLInputElement, apiTokenInstance?: HTMLInputElement }
 
 export const Login = () => {
+	const { login } = useContext(AuthProtectionContext)
+
 	const onSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		
 		const { idInstance, apiTokenInstance } = event.currentTarget.elements as FormElements
 
 		if (idInstance?.value && apiTokenInstance?.value) {
-			console.log('id: ', idInstance.value)
-			console.log('api token: ', apiTokenInstance.value)
+			login({ idInstance: idInstance.value, apiTokenInstance: apiTokenInstance.value })
 		}
 	}
 
