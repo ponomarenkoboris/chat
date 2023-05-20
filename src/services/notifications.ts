@@ -47,10 +47,10 @@ const deleteNotifications = async (receiptId: number): Promise<void> => {
 export default function receiveNotifications (
 	callback: (notification: Notification) => void, 
 	contorller: AbortController
-) {
+): ReturnType<typeof setInterval> {
 	let isProccessing = false;
 
-	setInterval(async () => {
+	const intervalId = setInterval(async () => {
 		if (isProccessing) return;
 
 		isProccessing = true
@@ -77,4 +77,5 @@ export default function receiveNotifications (
 		}
 	}, 3000)
 
+	return intervalId
 }

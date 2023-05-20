@@ -37,7 +37,18 @@ export const Chat = () => {
 	}, [])
 
 	useLayoutEffect(() => {
-		if (activeChat) receiveNotifications(onNotification, requestController.current.controller)
+		let intervalId: ReturnType<typeof setInterval> | null = null 
+		if (activeChat) {
+			requestController.current.controller = new AbortController()
+			intervalId = receiveNotifications(onNotification, requestController.current.controller)
+		}
+
+		return () => {
+			if (intervalId) {
+				requestController.current.controller.abort()
+				clearInterval(intervalId)
+			}
+		}
 	}, [activeChat])
 
 	return (
